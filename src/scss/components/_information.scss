@@ -3,6 +3,17 @@
     width: 100%;
     padding: 70px 0px;
     position: relative;
+    flex-wrap: wrap;
+
+    @include respondsive(md) {
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px 0px;
+    }
+
+    @include respondsive(sm) {
+        padding: 30px 0px;
+    }
 }
 
 .information {
@@ -10,33 +21,76 @@
     &-left {
         @include flexbox(column,flex-start,flex-start);
         gap: 25px;
-        width: 50%;
+
+        @include respondsive(md) {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        @include respondsive(sm) {
+            gap: 20px;
+        }
 
         &-title {
             @include body-3uppercase;
             letter-spacing: 1.2px;
+
+            @include respondsive(sm) {
+                @include mobile-body-3uppercase;
+                color: $white;
+            }
         }
 
         &-heading {
             @include h2;
+            width: 560px;
+
+            @include respondsive(sm) {
+                width: 100%;
+                @include mobile-h2;
+            }
 
             span {
                 @include h2;
                 color: $red-normal;
+
+                @include respondsive(sm) {
+                    @include mobile-h2;
+                    color: $red-normal;
+                }
             }
         }
 
         &-txt {
             @include subtitle-reguler;
+            width: 560px;
+
+            @include respondsive(sm) {
+                @include mobile-subtitle-reguler;
+                width: 100%;
+            }
         }
     }
 
     &-right {
-        @include flexbox(row,center);
-        width: 30%;
+        @include flexbox(row,flex-end);
+
+        @include respondsive(md) {
+            width: 100%;
+            justify-content: center;
+            padding: 20px 0px;
+        }
+
         img {
             width: 350px;
             height: 350px;
+
+            @include respondsive(sm) {
+                width: 200px;
+                height: 200px;
+            }
         }
     }
 }

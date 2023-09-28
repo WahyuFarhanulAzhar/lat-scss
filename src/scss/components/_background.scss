@@ -22,6 +22,14 @@
             transform: scaleX(-1);
             right: -40px;
             top: -120px;
+
+            @include respondsive(md) {
+                width: 767.58px;
+                height: 800px;
+                rotate: -16deg;
+                left: -60px;
+                top: 342px;
+            }
         }
 
         &-bg2 {
@@ -29,8 +37,18 @@
             height: 574px;
             transform: rotate(-3deg);
             position: absolute;
-            left: -249.73px;
-            top: 1772.579px;
+            left: -249px;
+            top: 1772px;
+
+            @include respondsive(md) {
+                top: 1670px;
+            }
+
+            @include respondsive(sm) {
+                top: 1284px;
+                width: 408.099px;
+                height: 364.55px;
+            }
         }
     }
 }
@@ -42,6 +60,11 @@
     position: relative;
     margin-top: -198px;
     padding-top: 200px;
+
+    @include respondsive(sm) {
+        margin-top: -80px;
+        padding-top: 80px;
+    }
 
     .divider2 {
         &-item {

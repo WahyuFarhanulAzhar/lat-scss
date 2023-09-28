@@ -4,6 +4,16 @@
     padding: 70px 0px;
     gap: 80px;
     position: relative;
+
+    @include respondsive(md) {
+        gap: 50px;
+        padding: 60px 0px;
+    }
+
+    @include respondsive(sm) {
+        gap: 40px;
+        padding: 30px 0px;
+    }
 }
 
 .post {
@@ -11,20 +21,42 @@
     &-head {
         @include flexbox(row,space-between,baseline);
         width: 100%;
+        flex-wrap: wrap;
+
+        @include respondsive(sm) {
+            flex-direction: column;
+            gap: 15px;
+        }
 
         &-heading {
             @include h2;
             color: $black;
-            margin: 0px
+            margin: 0px;
+
+            @include respondsive(sm) {
+                width: 100%;
+                @include mobile-h2;
+                color: $black;
+            }
         }
 
         &-link {
-            @include flexbox;
+            @include flexbox(row,flex-end);
             gap: 10px;
+
+            @include respondsive(sm) {
+                width: 100%;
+                justify-content: flex-start;
+            }
 
             span {
                 @include body-1bold;
                 color: $primary;
+
+                @include respondsive(sm) {
+                    @include mobile-body-1bold;
+                    color: $primary;
+                }
             }
     
             img {
@@ -38,16 +70,39 @@
         @include flexbox(row,space-between,flex-start);
         width: 100%;
         gap: 30px;
-        flex-wrap: wrap;
+
+        @include respondsive(md) {
+            &-item:first-child {
+                display: none;
+            }
+        }
+
+        @include respondsive(sm) {
+            flex-wrap: wrap;
+        }
 
         &-item {
             @include flexbox(column,space-between,flex-start);
             width: 30%;
             gap: 30px;
 
+            @include respondsive(md) {
+                width: 50%;
+            }
+
+            @include respondsive(sm) {
+                width: 100%;
+                gap: 20px;
+            }
+            
+
             &-img {
-                width: 370px;
+                width: 100%;
                 height: 200px;
+
+                @include respondsive(md) {
+                    width: 100%;
+                }
             }
 
             &-desc {
@@ -66,12 +121,22 @@
                     span {
                         @include body-3uppercase;
                         color: $black;
+
+                        @include respondsive(sm) {
+                            @include mobile-body-3uppercase;
+                            color: $black;
+                        }
                     }
                 }
 
                 h4 {
                     @include h4;
                     color: $black;
+
+                    @include respondsive(sm) {
+                        @include mobile-h4;
+                        color: $black;
+                    }
                 }
 
                 a {
@@ -81,6 +146,11 @@
                     span {
                         @include body-1bold;
                         color: $primary;
+
+                        @include respondsive(sm) {
+                            @include mobile-body-1bold;
+                            color: $primary;
+                        }
                     }
 
                     img {

@@ -12,6 +12,10 @@
     @include flexbox(column);
     width: 100%;
     gap: 20px;
+
+    @include respondsive(sm) {
+        gap: 0px;
+    }
 }
 
 .footer {
@@ -22,15 +26,30 @@
         padding: 70px 0px;
         gap: 30px;
 
+        @include respondsive(sm) {
+            padding: 40px 0px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         &-item {
             @include flexbox(column,flex-start,flex-start);
             width: 25%;
             gap: 25px;
             z-index: 1;
 
+            @include respondsive(sm) {
+                width: 40%;
+            }
+
             &-heading {
                 @include subtitle;
                 color: $black;
+
+                @include respondsive(sm) {
+                    @include mobile-subtitle;
+                    color: $black;
+                }
             }
 
             &-list {
@@ -41,15 +60,26 @@
                     @include body-1reguler;
                     color: $black;
 
+                    @include respondsive(sm) {
+                        @include mobile-body-1reguler;
+                        color: $black;
+                    }
                 }
             }
         }
     }
 
     &-bot {
-        @include flexbox(ro,space-between,flex-start);
+        @include flexbox(row,space-between,flex-start);
         width: 100%;
         padding: 40px 0px;
+        flex-wrap: wrap;
+
+        @include respondsive(sm) {
+            padding: 20px 0px;
+            gap: 20px;
+            justify-content: center;
+        }
 
         &-left {
             @include flexbox(column,flex-start,flex-start);
@@ -59,6 +89,9 @@
                 @include body-2bold;
                 color: $black;
 
+                @include respondsive(sm) {
+                    @include mobile-body-2bold;
+                }
             }
 
             &-list {
@@ -68,6 +101,10 @@
                 a {
                     @include body-2reguler;
                     opacity: 0.5;
+
+                    @include respondsive(sm) {
+                        @include mobile-body-2reguler;
+                    }
                 }
             }
         }
@@ -89,5 +126,19 @@
         height: 346px;
         right: -170px;
         top: -114px;
+
+        @include respondsive(md) {
+            width: 221px;
+            height: 230px;
+            right: -134px;
+            top: -68px;
+        }
+
+        @include respondsive(sm) {
+            width: 150px;
+            height: 155px;
+            right: -83px;
+            top: -66px;
+        }
     }
 }

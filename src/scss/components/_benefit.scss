@@ -3,27 +3,64 @@
     width: 100%;
     padding: 70px 0px;
     gap: 40px;
+
+    @include respondsive(md) {
+        padding: 60px 0px;
+    }
+
+    @include respondsive(sm) {
+        padding: 30px 0px;
+        gap: 30px;
+    }
 }
 
 .benefit {
 
     &-head {
-        @include flexbox(column);
-        width: 50%;
+        @include flexbox(column,flex-start,flex-start);
         gap: 25px;
 
+        @include respondsive(md) {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        @include respondsive(sm) {
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            gap: 20px;
+        }
+
         &-title {
-            width: 100%;
             @include body-3uppercase;
+
+            @include respondsive(sm) {
+                @include mobile-body-3uppercase;
+            }
         }
 
         &-heading {
-            width: 100%;
             @include h2;
+
+            @include respondsive(md) {
+                width: 100%;
+            }
+
+            @include respondsive(sm) {
+                @include mobile-h2;
+                text-align: left;
+            }
 
             span {
                 @include h2;
                 color: $primary;
+
+                @include respondsive(sm) {
+                    @include mobile-h2;
+                    color: $primary;
+                }
             }
         }
     }
@@ -32,21 +69,44 @@
         @include flexbox(row,space-between);
         width: 100%;
 
+        @include respondsive(md) {
+            flex-direction: column-reverse;
+        }
+
+        @include respondsive(sm) {
+            gap: 30px;
+        }
+
         &-left {
             @include flexbox;
-            width: 50%;
             padding: 0px 20px;
+
+            @include respondsive(md) {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
 
             img {
                 width: 430px;
                 height: 430px;
+
+                @include respondsive(sm) {
+                    width: 305px;
+                    height: 305px;
+                }
             }
         }
 
         &-right {
             @include flexbox(column,flex-end,flex-end);
             gap: 30px;
-            width: 50%;
+
+            @include respondsive(md) {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
 
             &-item {
                 @include flexbox(column,flex-start,flex-start);
@@ -56,17 +116,29 @@
                 border-left: 2px solid;
                 border-color: rgba($white, .1);
 
+                @include respondsive(sm) {
+                    width: 100%;
+                }
+
                 &:hover {
                     border-color: $primary;
                 }
 
                 span {
                     @include subtitle;
+
+                    @include respondsive(sm) {
+                        @include mobile-subtitle;
+                    }
                 }
 
                 p {
                     @include body-1reguler;
                     opacity: 0.7;
+
+                    @include respondsive(sm) {
+                        @include mobile-body-1reguler;
+                    }
                 }
             }
         }

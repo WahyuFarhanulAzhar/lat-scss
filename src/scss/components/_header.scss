@@ -5,27 +5,62 @@
     width: 100%;
     padding: 140px 0px 70px 0px;
     position: relative;
+
+    @include respondsive(md) {
+        padding: 100px 0px 60px 0px;
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    @include respondsive(sm) {
+        padding: 60px 0px 30px 0px;
+        gap: 40px;
+    }
 }
 
 .header {
 
     &-left {
-        @include flexbox(column,flex-start);
-        width: 60%;
-        max-width: 670px;
+        @include flexbox(column,flex-start,flex-start);
         gap: 60px;
         z-index: 1;
 
+        @include respondsive(md) {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            text-align: center;
+        }
+
+        @include respondsive(sm) {
+            gap: 40px;
+        }
+
         &-txt {
-            @include flexbox(column);
+            @include flexbox(column,flex-start,flex-start);
             gap: 30px;
+
+            @include respondsive(sm) {
+                gap: 20px;
+            }
 
             &-heading {
                 @include h1;
+                max-width: 670px;
+
+                @include respondsive(sm) {
+                    @include mobile-h1;
+                }
             }
 
             &-text {
                 @include subtitle-reguler;
+                max-width: 670px;
+
+                @include respondsive(sm) {
+                    @include mobile-subtitle-reguler;
+                }
             }
         }
 
@@ -33,6 +68,15 @@
             @include flexbox;
             gap: 40px;
             width: 100%;
+            max-width: 670px;
+
+            @include respondsive(md) {
+                justify-content: center;
+            }
+
+            @include respondsive(sm) {
+                flex-direction: column;
+            }
 
             &-blue {
                 @include flexbox(row,center,center);
@@ -46,6 +90,10 @@
                 border: 1px solid var(--light-10, rgba(255, 255, 255, 0.10));
                 background: var(--light-10, rgba(255, 255, 255, 0.10));
                 
+                @include respondsive(sm) {
+                    padding: 15px 20px;
+                }
+                
                 img {
                     width: 24px;
                     height: 24px;
@@ -56,40 +104,80 @@
 
     &-right {
         @include flexbox;
-        width: 47%;
         height: 570px;
-        position: absolute;
-        right: 0px;
-        top: 140px;
+        position: relative;
+        
+
+        @include respondsive(md) {
+            width: 100%;
+            height: 350px;
+        }
+
+        @include respondsive(sm) {
+            height: 250px;
+        }
         
         &-img1 {
             position: absolute;
             width: 150px;
             height: 70px;
-            left: 240px;
+            left: 80px;
             top: -20px;
             background-color: $white;
             box-shadow: 20px 20px 100px 0px rgba(0, 0, 0, 0.40), 8px 8px 0px 0px rgba(31, 32, 37, 0.15), -8px -8px 0px 0px rgba(0, 0, 0, 0.15);
+            
+            @include respondsive(md) {
+                top: 0px;
+                left: 240px;
+            }
+
+            @include respondsive(sm) {
+                left: -60px;
+            }
+        
         }
 
         &-img2 {
             position: absolute;
             width: 340px;
             height: 220px;
-            right: -35px;
+            right: 0px;
             top: 80px;
             background-color: $white;
             box-shadow: 20px 20px 100px 0px rgba(0, 0, 0, 0.40), 8px 8px 0px 0px rgba(31, 32, 37, 0.15), -8px -8px 0px 0px rgba(0, 0, 0, 0.15);
+        
+            @include respondsive(md) {
+                top: 130px;
+                right: 220px;
+            }
+
+            @include respondsive(sm) {
+                width: 220px;
+                height: 140px;
+                top: 110px;
+                right: 80px;
+            }
+        
         }
 
         &-img3 {
             position: absolute;
             width: 170px;
             height: 180px;
-            left: 80px;
+            left: -40px;
             top: 300px;
             background-color: $white;
             box-shadow: 20px 20px 100px 0px rgba(0, 0, 0, 0.40), 8px 8px 0px 0px rgba(31, 32, 37, 0.15), -8px -8px 0px 0px rgba(0, 0, 0, 0.15);
+        
+            @include respondsive(md) {
+                top: 50px;
+                left: -50px;
+            }
+
+            @include respondsive(sm) {
+                left: -200px;
+            }
+        
         }
 
         &-img4 {
@@ -100,6 +188,17 @@
             top: 370px;
             background-color: $white;
             box-shadow: 20px 20px 100px 0px rgba(0, 0, 0, 0.40), 8px 8px 0px 0px rgba(31, 32, 37, 0.15), -8px -8px 0px 0px rgba(0, 0, 0, 0.15);
+        
+            @include respondsive(md) {
+                top: 50px;
+                right: -50px;
+            }
+
+            @include respondsive(sm) {
+                top: 0px;
+                right: -140px;
+            }
+        
         }
     }
 }

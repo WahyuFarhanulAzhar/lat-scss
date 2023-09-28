@@ -4,6 +4,15 @@
     padding: 70px 0px;
     gap: 40px;
     position: relative;
+
+    @include respondsive(md) {
+        padding: 60px 0px;
+    }
+
+    @include respondsive(sm) {
+        padding: 30px 0px;
+        gap: 30px;
+    }
 }
 
 .customer {
@@ -12,6 +21,11 @@
         width: 100%;
         @include subtitle-bold;
         color: $white;
+
+        @include respondsive(sm) {
+            @include mobile-subtitle-bold;
+            align-self: stretch;
+        }
     }
 
     &-logo {
@@ -28,13 +42,28 @@
             border-radius: 8px;
             background-color: rgba($white, .02);
 
+            @include respondsive(sm) {
+                padding: 20px;
+                width: 45%;
+                gap: 10px;
+            }
+
             img {
                 width: 52px;
                 height: 52px;
+
+                @include respondsive(sm) {
+                    width: 36px;
+                    height: 36px;
+                }
             }
 
             span {
                 @include body-1bold;
+
+                @include respondsive(sm) {
+                    @include mobile-body-1bold;
+                }
             }
         }
     }

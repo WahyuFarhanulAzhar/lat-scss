@@ -2,13 +2,35 @@
     @include flexbox(row,space-between);
     width: 100%;
     padding: 70px 0px;
+
+    @include respondsive(md) {
+        padding: 60px 0px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    @include respondsive(sm) {
+        padding: 30px 0px;
+    }
 }
 
 .analytics {
     &-left {
         @include flexbox(column,center,flex-start);
-        width: 30%;
         gap: 25px;
+
+        @include respondsive(md) {
+            width: 100%;
+            text-align: center;
+            align-items: center;
+        }
+
+        @include respondsive(sm) {
+            gap: 20px;
+            text-align: left;
+            align-items: flex-start;
+        }
 
         &-title {
             @include flexbox;
@@ -28,24 +50,67 @@
 
             &-txt {
                 @include body-3uppercase;
+
+                @include respondsive(sm) {
+                    @include mobile-body-3uppercase;
+                }
             }
         }
 
         &-heading {
             @include h3;
+            width: 370px;
+
+            @include respondsive(md) {
+                width: 670px;
+            }
+
+            @include respondsive(sm) {
+                @include mobile-h3;
+                width: 80%;
+            }
+            
         }
 
         &-txt {
             @include body-1reguler;
+            width: 370px;
+
+            @include respondsive(md) {
+                width: 670px;
+            }
+
+            @include respondsive(sm) {
+                @include mobile-body-1reguler;
+                width: 100%;
+            }
+            
         }
     }
 
     &-right {
         @include flexbox(row,flex-end);
-        width: 60%;
+
+        @include respondsive(md) {
+            width: 100%;
+            justify-content: center;
+        }
 
         img {
             box-shadow: 16px 16px 0px 0px rgba(0, 0, 0, 0.50), 20px 20px 100px 0px rgba(0, 0, 0, 0.40), -16px -16px 0px 0px rgba(0, 0, 0, 0.50);
+        
+            @include respondsive(md) {
+                width: 370px;
+                height: 340px;
+            }
+
+            @include respondsive(sm) {
+                width: 335px;
+                height: 310px;
+
+                box-shadow: none;
+            }
+        
         }
     }
 }

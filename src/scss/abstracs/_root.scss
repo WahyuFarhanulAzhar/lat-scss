@@ -1,3 +1,5 @@
+@import "../utilities/colors";
+
 :root {
     $spacer: 1rem !default;
     $spacers: (
@@ -55,10 +57,11 @@ $media: (
   flex-direction: $direction;
   justify-content: $content;
   align-items: $item;
+  
 }
 
 @mixin body-1bold {
-  color: var(--light-100, #FFF);
+  color: $white;
 
   /* Desktop/Body - 1/Bold */
   font-family: Urbanist;
@@ -69,7 +72,7 @@ $media: (
 }
 
 @mixin body-2bold {
-  color: var(--dark-100, #1F2025);
+  color: $black;
 
   /* Desktop/Body - 2/Bold */
   font-family: Urbanist;
@@ -80,7 +83,7 @@ $media: (
 }
 
 @mixin body-1reguler {
-  color: var(--light-100, #FFF);
+  color: $white;
 
   /* Desktop/Body - 1/Regular */
   font-family: Urbanist;
@@ -91,7 +94,7 @@ $media: (
 }
 
 @mixin body-2reguler {
-  color: var(--dark-100, #1F2025);
+  color: $black;
 
   /* Desktop/Body - 2/Regular */
   font-family: Urbanist;
@@ -102,7 +105,7 @@ $media: (
 }
 
 @mixin body-3uppercase {
-  color: var(--light-100, #FFF);
+  color: $white;
 
   /* Desktop/Body - 3/Black - Uppercase */
   font-family: Urbanist;
@@ -115,7 +118,7 @@ $media: (
 }
 
 @mixin h1 {
-  color: var(--light-100, #FFF);
+  color: $white;
 
   /* Desktop/H1/Black */
   font-family: Urbanist;
@@ -126,7 +129,7 @@ $media: (
 }
 
 @mixin h2 {
-  color: var(--light-100, #FFF);
+  color: $white;
 
   /* Desktop/H2/Black */
   font-family: Urbanist;
@@ -137,7 +140,7 @@ $media: (
 }
 
 @mixin h3 {
-  color: var(--light-100, #FFF);
+  color: $white;
 
   /* Desktop/H3/Black */
   font-family: Urbanist;
@@ -148,7 +151,7 @@ $media: (
 }
 
 @mixin h4 {
-  color: var(--dark-100, #1F2025);
+  color: $black;
 
   /* Desktop/H4/Bold */
   font-family: Urbanist;
@@ -159,7 +162,7 @@ $media: (
 }
 
 @mixin subtitle {
-  color: var(--light-100, #FFF);
+  color: $white;
 
   /* Desktop/Subtitle/Black */
   font-family: Urbanist;
@@ -170,7 +173,7 @@ $media: (
 }
 
 @mixin subtitle-reguler {
-  color: var(--light-100, #FFF);
+  color: $white;
 
   /* Desktop/Subtitle/Regular */
   font-family: Urbanist;
@@ -181,13 +184,163 @@ $media: (
 }
 
 @mixin subtitle-bold {
-  color: var(--dark-100, #1F2025);
+  color: $white;
 
-  /* Desktop/H4/Bold */
+  /* Desktop/Subtitle/Bold */
+  font-family: Urbanist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px; /* 150% */
+}
+
+@mixin mobile-h1 {
+  color: $white;
+  text-align: center;
+
+  /* Mobile/H1/Black */
+  font-family: Urbanist;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+@mixin mobile-h2 {
+  color: $white;
+  text-align: center;
+
+  /* Mobile/H2/Black */
   font-family: Urbanist;
   font-size: 28px;
   font-style: normal;
-  font-weight: 700;
-  line-height: 36px; /* 128.571% */
+  font-weight: 900;
+  line-height: 130%; /* 36.4px */
 }
 
+@mixin mobile-h3 {
+  color: $white;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  /* Mobile/H3/Black */
+  font-family: Urbanist;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 34px; /* 154.545% */
+}
+
+@mixin mobile-h4 {
+  color: $black;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  /* Mobile/H4/Bold */
+  font-family: Urbanist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 140% */
+}
+
+@mixin mobile-subtitle {
+  color: $white;
+
+  /* Mobile/Subtitle/Black */
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 26px; /* 144.444% */
+}
+
+@mixin mobile-subtitle-reguler {
+  color: $white;
+  text-align: center;
+
+  /* Mobile/Subtitle/Regular */
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 144.444% */
+}
+
+@mixin mobile-subtitle-bold {
+  color: $white;
+
+  /* Mobile/Subtitle/Bold */
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; /* 144.444% */
+}
+
+@mixin mobile-body-1bold {
+  color: $white;
+
+  /* Mobile/Body - 1/Bold */
+  font-family: Urbanist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+@mixin mobile-body-2bold {
+  color: $black;
+
+  /* Mobile/Body - 2/Bold */
+  font-family: Urbanist;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+}
+
+@mixin mobile-body-1reguler {
+  color: $white;
+
+  /* Mobile/Body - 1/Regular */
+  font-family: Urbanist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+@mixin mobile-body-2reguler {
+  color: $black;
+
+  /* Mobile/Body - 2/Regular */
+  font-family: Urbanist;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+
+@mixin mobile-body-3uppercase {
+  color: $white;
+
+  /* Mobile/Body - 3/Black - Uppercase */
+  font-family: Urbanist;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+@mixin mobile-body-3bold-uppercase {
+  color: $black;
+
+  /* Mobile/Subtitle/Black */
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 26px; /* 144.444% */
+}
