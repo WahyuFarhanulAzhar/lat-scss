@@ -89,7 +89,37 @@
                 gap: 15px;
                 border: 1px solid var(--light-10, rgba(255, 255, 255, 0.10));
                 background: var(--light-10, rgba(255, 255, 255, 0.10));
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
                 
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba($white, .05);
+                    transition: .5s;
+                    z-index: 2;
+                }
+    
+                &:hover {
+                    
+                    &:before{
+                        top: 0px;
+                    }
+                    
+                    img {
+                        transform: rotate(360deg);
+                    }
+
+                    span {
+                        scale: 1.05;
+                    }
+                }
+
                 @include respondsive(sm) {
                     padding: 15px 20px;
                 }
@@ -97,6 +127,20 @@
                 img {
                     width: 24px;
                     height: 24px;
+                    position: relative;
+                    transition: .5s;
+                    z-index: 3;
+                }
+
+                span {
+                    @include body-1bold;
+                    position: relative;
+                    z-index: 3;
+                    transition: 200ms;
+
+                    @include respondsive(sm) {
+                        @include mobile-body-1bold;
+                    }
                 }
             }
         }
@@ -124,6 +168,7 @@
             left: 80px;
             top: -20px;
             background-color: $white;
+            animation: float 4s ease-in-out infinite;
             box-shadow: 20px 20px 100px 0px rgba(0, 0, 0, 0.40), 8px 8px 0px 0px rgba(31, 32, 37, 0.15), -8px -8px 0px 0px rgba(0, 0, 0, 0.15);
             
             @include respondsive(md) {
@@ -144,6 +189,7 @@
             right: 0px;
             top: 80px;
             background-color: $white;
+            animation: float 6s ease-in-out infinite;
             box-shadow: 20px 20px 100px 0px rgba(0, 0, 0, 0.40), 8px 8px 0px 0px rgba(31, 32, 37, 0.15), -8px -8px 0px 0px rgba(0, 0, 0, 0.15);
         
             @include respondsive(md) {
@@ -167,8 +213,13 @@
             left: -40px;
             top: 300px;
             background-color: $white;
+            animation: float 5s ease-in-out infinite;
             box-shadow: 20px 20px 100px 0px rgba(0, 0, 0, 0.40), 8px 8px 0px 0px rgba(31, 32, 37, 0.15), -8px -8px 0px 0px rgba(0, 0, 0, 0.15);
         
+            @include respondsive(xl) {
+                top: 450px;
+            }
+
             @include respondsive(md) {
                 top: 50px;
                 left: -50px;
@@ -177,7 +228,6 @@
             @include respondsive(sm) {
                 left: -200px;
             }
-        
         }
 
         &-img4 {
@@ -187,6 +237,7 @@
             right: -100px;
             top: 370px;
             background-color: $white;
+            animation: float 7s ease-in-out infinite;
             box-shadow: 20px 20px 100px 0px rgba(0, 0, 0, 0.40), 8px 8px 0px 0px rgba(31, 32, 37, 0.15), -8px -8px 0px 0px rgba(0, 0, 0, 0.15);
         
             @include respondsive(md) {

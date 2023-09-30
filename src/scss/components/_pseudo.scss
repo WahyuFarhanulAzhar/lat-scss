@@ -1,3 +1,7 @@
+* {
+    transition: 200ms;
+}
+
 .divider {
     position: relative;
     width: 100%;
@@ -12,10 +16,13 @@
 .divider2 {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 20px;
     width: 100%;
     padding: 70px 0px;
     opacity: 0.1;
+    position: relative;
+    z-index: 100000;
+    overflow: hidden;
 
     @include respondsive(sm) {
         padding: 30px 0px;
@@ -26,6 +33,17 @@
         height: 8px;
         background: $white;
         border-radius: 50px;
+          
+          &:nth-child(1) {
+            animation: preloader .6s ease-in-out alternate infinite;
+          }
+          &:nth-child(2) {
+            animation: preloader .6s ease-in-out alternate .2s infinite;
+          }
+          
+          &:nth-child(3) {
+            animation: preloader .6s ease-in-out alternate .4s infinite;
+          }
     }
 }
 
@@ -41,7 +59,7 @@
 .btn-blue {
     background: var(--blue-100-normal, #205BF1);
     border: 2px solid transparent;
-    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    transition: background-color 200ms, border-color 200ms, transform 200ms;
     transform-origin: center;
 
     /* medium/blue */

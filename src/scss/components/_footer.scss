@@ -64,6 +64,10 @@
                         @include mobile-body-1reguler;
                         color: $black;
                     }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -105,6 +109,10 @@
                     @include respondsive(sm) {
                         @include mobile-body-2reguler;
                     }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -116,6 +124,10 @@
             img {
                 width: 24px;
                 height: 24px;
+
+                &:hover {
+                    transform: scale(1.3);
+                }
             }
         }
     }

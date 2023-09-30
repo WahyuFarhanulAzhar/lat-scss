@@ -84,8 +84,8 @@
         }
 
         img {
-            width: 350px;
-            height: 350px;
+            width: auto;
+            height: auto;
 
             @include respondsive(sm) {
                 width: 200px;

@@ -97,15 +97,14 @@
         }
 
         img {
+            width: 100%;
             box-shadow: 16px 16px 0px 0px rgba(0, 0, 0, 0.50), 20px 20px 100px 0px rgba(0, 0, 0, 0.40), -16px -16px 0px 0px rgba(0, 0, 0, 0.50);
         
             @include respondsive(md) {
-                width: 370px;
-                height: 340px;
+                height: 550px;
             }
 
             @include respondsive(sm) {
-                width: 335px;
                 height: 310px;
 
                 box-shadow: none;

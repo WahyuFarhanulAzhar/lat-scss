@@ -43,10 +43,15 @@
         &-link {
             @include flexbox(row,flex-end);
             gap: 10px;
+            transition: 200ms;
 
             @include respondsive(sm) {
                 width: 100%;
                 justify-content: flex-start;
+            }
+
+            &:hover {
+                filter: grayscale(99);
             }
 
             span {
@@ -142,6 +147,10 @@
                 a {
                     @include flexbox;
                     gap: 10px;
+
+                    &:hover {
+                        filter: grayscale(99);
+                    }
 
                     span {
                         @include body-1bold;

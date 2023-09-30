@@ -18,6 +18,14 @@ position: relative;
             gap: 20px;
         }
 
+        @include respondsive(xl) {
+            width: 80%;
+        }
+
+        @include respondsive(sm) {
+            width: 50%;
+        }
+
         &-logo {
             @include flexbox;
         }
@@ -76,6 +84,14 @@ position: relative;
         @include flexbox(row,flex-end);
         gap: 25px;
 
+        @include respondsive(xl) {
+         width: 20%;       
+        }
+
+        @include respondsive(md) {
+         width: 30%;       
+        }
+
         @include respondsive(sm) {
             width: 50%;
         }
@@ -86,10 +102,10 @@ position: relative;
             transition: 200ms;
 
             &:hover {
-                transform: scale(1.3);
+                transform: scale(1.3) rotate(360deg);
             }
 
-            @include respondsive(md) {
+            @include respondsive(xl) {
                 display: none;
             }
         }
@@ -110,7 +126,7 @@ position: relative;
                     color: $primary;
                 }
 
-                @include respondsive(md) {
+                @include respondsive(xl) {
                     display: none;
                 }
             }
